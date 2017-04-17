@@ -2,8 +2,6 @@
 
 set -ex
 
-# env
-
 if [  ! -d "$OPENCV_INSTALL_DIR/lib"  ];then
 	wget https://github.com/opencv/opencv/archive/$OPENCV_VERSION.tar.gz
 
