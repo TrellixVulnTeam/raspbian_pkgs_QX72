@@ -1,6 +1,8 @@
 Open Computer Vision (OpenCV)
 =================================
 
+**Still a work in progress**
+
 How to build a package for OpenCV 3.x.
 
 Setup
@@ -33,6 +35,7 @@ These will pull in a lot of other packages, but that is ok::
 	$ sudo apt-get install libgtk2.0-dev
 
 	mkdir ~/tmp/fakeroot
+	
 
 
 .bashrc
@@ -118,6 +121,6 @@ Old
 	
 .. raw:: html
 
-	----
+	<hr>
 
-	<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+	<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" align="center"/></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
