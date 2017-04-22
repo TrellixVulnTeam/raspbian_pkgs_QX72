@@ -2,6 +2,12 @@
 
 set -ex
 
+# setup ffmpeg
+$ sudo sh -c 'echo "deb http://www.deb-multimedia.org jessie main" >> /etc/apt/sources.list'
+$ sudo apt-get update
+$ sudo apt-get install deb-multimedia-keyring
+$ sudo apt-get install ffmpeg
+
 # setup
 OPENCV_VERSION=3.2.0
 OPENCV_INSTALL_DIR="$HOME/opencv-$OPENCV_VERSION-install
@@ -19,9 +25,13 @@ apt-get -y install libjpeg8-dev libtiff4-dev libjasper-dev libpng12-dev
 apt-get -y install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
 apt-get -y install libgtk2.0-dev
 
-# update python
+# update python2
 su pi -c pip install -U pip setuptools wheel
 su pi -c pip install -U numpy PyYAML matplotlib simplejson
+
+# update python3
+su pi -c pip3 install -U pip setuptools wheel
+su pi -c pip3 install -U numpy PyYAML matplotlib simplejson
 
 # if [  ! -d "$OPENCV_INSTALL_DIR/lib"  ];then
 wget https://github.com/opencv/opencv/archive/$OPENCV_VERSION.tar.gz
