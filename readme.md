@@ -61,4 +61,6 @@ pi@zoidberg zeromq $ dpkg-deb --info zeromq-kevin.deb
 
 `sudo dpkg -i <deb file>`
 
- [Package setup ref](https://www.leaseweb.com/labs/2013/06/creating-custom-debian-packages/)
+# References
+
+ [Package setup details](https://www.leaseweb.com/labs/2013/06/creating-custom-debian-packages/)
