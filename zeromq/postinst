@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+
+echo "Using ldconfig"
+eval "ldconfig"
+
+echo "fixing permission so they are back to pi"
+eval "chown -R pi:pi /usr/local"
+
+echo "Done"

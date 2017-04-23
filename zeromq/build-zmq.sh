@@ -15,10 +15,15 @@ echo ""
 
 
 if [[ "$OSTYPE" == "linux-gnu" ]] || [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
+	echo "Upgrading software"
+	echo ""
 	# apt-get update
 	apt-get -y upgrade
 	apt-get -y install build-essential cmake git pkg-config
-	apt-get -y libtool autoconf automake uuid-dev
+	apt-get -y install libtool autoconf automake uuid-dev libunwind-dev
+
+	echo "System ready"
+	echo ""
 fi
 
 if [ ! -f zeromq-$ZMQ_VERSION.tar.gz ]; then
