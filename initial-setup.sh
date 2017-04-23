@@ -14,7 +14,7 @@ apt-get -y upgrade
 apt-get -y install cmake pkg-config build-essential git libpcap
 
 # admin
-apt-get -y install nmap htop samba samba-common-bin arp-scan
+apt-get -y install nmap htop samba samba-common-bin arp-scan wget curl
 
 # linux kernel
 apt-get -y install raspi-config rpi-update
@@ -25,6 +25,9 @@ apt-get -y install jp2a
 # install node.js
 curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 apt-get install -y nodejs
+
+# install some repos
+cd ~/github && git clone git@github.com:walchko/dotfiles.git
 
 echo ""
 echo "============================="
