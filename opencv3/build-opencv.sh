@@ -27,14 +27,16 @@ PY2LIB=$(python -c "from distutils.sysconfig import get_config_var;from os.path 
 PY2INCLUDE=$(python -c "from distutils.sysconfig import get_python_inc; print(get_python_inc())")
 PY2EXE=$(which python)
 PY2NUMPY=$(python -c "import numpy; print(numpy.get_include())")
-PY2PKGS=$(python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")
+#PY2PKGS=$(python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")
+PY2PKGS=$OPENCV_INSTALL_DIR/lib/python2.7/dist-packages
 
 # python 3
 PY3LIB=$(python3 -c "from distutils.sysconfig import get_config_var;from os.path import dirname,join ; print(join(dirname(get_config_var('LIBPC')),get_config_var('LDLIBRARY')))")
 PY3INCLUDE=$(python3 -c "from distutils.sysconfig import get_python_inc; print(get_python_inc())")
 PY3EXE=$(which python3)
 PY3NUMPY=$(python3 -c "import numpy; print(numpy.get_include())")
-PY3PKGS=$(python3 -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")
+#PY3PKGS=$(python3 -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")
+PY3PKGS=$OPENCV_INSTALL_DIR/lib/python3/dist-packages
 
 if [[ "$OSTYPE" == "linux-gnu" ]] || [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
 	# apt-get update
@@ -65,7 +67,7 @@ if [ ! -f $OPENCV_VERSION.tar.gz ]; then
 	wget https://github.com/opencv/opencv/archive/$OPENCV_VERSION.tar.gz
 else
 	echo "Using previously downloaded file"
-	rm -fr opencv-$OPENCV_VERSION
+	# rm -fr opencv-$OPENCV_VERSION
 fi
 
 # setup things
