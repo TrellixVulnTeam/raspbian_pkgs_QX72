@@ -61,6 +61,50 @@ pi@zoidberg zeromq $ dpkg-deb --info zeromq-kevin.deb
 
 `sudo dpkg -i <deb file>`
 
-# References
+## References
 
  [Package setup details](https://www.leaseweb.com/labs/2013/06/creating-custom-debian-packages/)
+ 
+# Repository
+
+## Packagecloud.io
+
+I have been using [packagecloud.io](https://packagecloud.io) instead of setting up a repo myself.
+It is still too early to know if it is a good move or not.
+In order to install a deb repo, first you need to install the GPG key that used to sign 
+repository metadata. You do that using a utility called apt-key.
+
+    curl -L https://packagecloud.io/walchko/robots/gpgkey | sudo apt-key add -
+
+Refresh your package cache by running:
+
+    sudo apt-get update
+
+If you are running Debian, install debian-archive-keyring so that official Debian 
+repositories will be verified:
+
+    sudo apt-get install debian-archive-keyring
+
+Install a package called apt-transport-https to make it possible for apt to fetch 
+packages over https.
+
+    sudo apt-get install -y apt-transport-https
+
+Create a file named /etc/apt/sources.list.d/walchko_robots.list that contains the repository 
+configuration below.
+
+Make sure to replace ubuntu and trusty in the config below with your Linux distribution 
+and version:
+
+    deb https://packagecloud.io/walchko/robots/raspbian/ jessie main
+    deb-src https://packagecloud.io/walchko/robots/raspbian/ jessie main
+
+Valid options for os and dist parameters can be found in our support OS list in the docs.
+
+Run:
+
+    sudo apt-get update
+
+to update your local APT cache.
+
+You can now install packages from your repository.
