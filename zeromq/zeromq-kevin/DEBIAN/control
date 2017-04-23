@@ -1,7 +1,7 @@
 Package: zeromq-kevin
 Architecture: all
 Maintainer: Kevin
-Depends: debconf (>= 0.5.00)
+Depends: debconf (>= 0.5.00), libc6 (>= 2.7), libgcc1 (>= 1:4.4.0), libpgm-5.1-0 (>= 5.1.116~dfsg), libsodium13 (>= 0.6.0), libstdc++6 (>= 4.9)
 Priority: optional
 Version: 4.2.1
 Description: Kevin's zmq library
