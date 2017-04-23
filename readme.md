@@ -1,12 +1,16 @@
-Open Computer Vision (OpenCV)
-=================================
+# Open Computer Vision (OpenCV)
 
 **Still a work in progress**
 
 How to build a package for OpenCV 3.x.
 
-Setup
--------
+## Setup
+
+### Python
+
+	sudo apt install -y python3 python3-dev
+
+### ffmpeg
 
 To get ``ffmpeg`` on jessie, edit ``/etc/apt/sources.list`` and add::
 
@@ -35,7 +39,7 @@ These will pull in a lot of other packages, but that is ok::
 	$ sudo apt-get install libgtk2.0-dev
 
 	mkdir ~/tmp/fakeroot
-	
+
 
 
 .bashrc
@@ -118,7 +122,7 @@ Old
 	sudo apt-get install libtbb libjpeg8 libjpeg8-dev libjpeg8-dbg libjpeg-progs
 	sudo apt-get install ffmpeg libavcodec-dev libavformat-dev libunicap2
 	sudo apt-get install libunicap2-dev swig libv4l-0 libv4l-dev python-dev
-	
+
 .. raw:: html
 
 	<hr>

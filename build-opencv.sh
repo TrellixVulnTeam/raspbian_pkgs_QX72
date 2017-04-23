@@ -26,12 +26,12 @@ apt-get -y install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
 apt-get -y install libgtk2.0-dev
 
 # update python2
-su pi -c pip install -U pip setuptools wheel
-su pi -c pip install -U numpy PyYAML matplotlib simplejson
+su pi -c "pip install -U pip setuptools wheel"
+su pi -c "pip install -U numpy PyYAML matplotlib simplejson"
 
 # update python3
-su pi -c pip3 install -U pip setuptools wheel
-su pi -c pip3 install -U numpy PyYAML matplotlib simplejson
+su pi -c "pip3 install -U pip setuptools wheel"
+su pi -c "pip3 install -U numpy PyYAML matplotlib simplejson"
 
 # if [  ! -d "$OPENCV_INSTALL_DIR/lib"  ];then
 wget https://github.com/opencv/opencv/archive/$OPENCV_VERSION.tar.gz
