@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 dpkg-deb --build libopencv3-kevin
-mv libopencv.deb ../packages
+mv libopencv3-kevin.deb ../packages
