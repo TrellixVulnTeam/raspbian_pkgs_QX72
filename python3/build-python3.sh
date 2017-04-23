@@ -40,4 +40,4 @@ make -j4
 make install
 
 # clean up
-rm -fr Python-$PYTHON_VERSION
+#rm -fr Python-$PYTHON_VERSION
