@@ -8,7 +8,7 @@ Debian gods have removed ffmpeg from Jessie, so to fix it (only do this once):
 
 FFmpeg 2.2.2 is available via the Multimedia Repository, so we have to
 add the repo to our system, update the local repo index and install the
-`deb-multimedia-keyring` and `ffmpeg` packages. Like this::
+`deb-multimedia-keyring` and `ffmpeg` packages. This script basically does:
 
 	$ sudo sh -c 'echo "deb http://www.deb-multimedia.org jessie main" >> /etc/apt/sources.list'
 	$ sudo apt-get update
