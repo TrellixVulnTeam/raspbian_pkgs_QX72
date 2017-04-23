@@ -6,6 +6,15 @@ Debian gods have removed ffmpeg from Jessie, so to fix it (only do this once):
 
 	./fix-ffmpeg.sh
 
+FFmpeg 2.2.2 is available via the Multimedia Repository, so we have to
+add the repo to our system, update the local repo index and install the
+`deb-multimedia-keyring` and `ffmpeg` packages. Like this::
+
+	$ sudo sh -c 'echo "deb http://www.deb-multimedia.org jessie main" >> /etc/apt/sources.list'
+	$ sudo apt-get update
+	$ sudo apt-get install deb-multimedia-keyring
+	$ sudo apt-get install ffmpeg
+  
 Now you system is good. Next:
 
 	./build-opencv.sh
