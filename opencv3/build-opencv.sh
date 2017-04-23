@@ -50,14 +50,14 @@ if [[ "$OSTYPE" == "linux-gnu" ]] || [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
 	apt-get -y install libgtk2.0-dev
 
 	# update python2
-	su $USR -c "pip install -U pip setuptools wheel"
-	su $USR -c "pip install -U numpy PyYAML matplotlib simplejson"
+	#su $USR -c "pip install -U pip setuptools wheel"
+	#su $USR -c "pip install -U numpy PyYAML matplotlib simplejson"
 
 	# update python3
 	if type python3 &> /dev/null; then
 		echo "found python3"
-		su $USR -c "pip3 install -U pip setuptools wheel"
-		su $USR -c "pip3 install -U numpy PyYAML matplotlib simplejson"
+		#su $USR -c "pip3 install -U pip setuptools wheel"
+		#su $USR -c "pip3 install -U numpy PyYAML matplotlib simplejson"
 	fi
 fi
 
