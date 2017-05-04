@@ -28,11 +28,6 @@ apt-get -y install raspi-config rpi-update
 # ascii art
 apt-get -y install jp2a
 
-# install node.js
-curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
-apt-get install -y nodejs
-npm install -g httpserver
-
 echo ""
 echo "============================="
 echo "| Let's grab some repos     |"
