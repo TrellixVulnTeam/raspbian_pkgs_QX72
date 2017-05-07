@@ -2,6 +2,10 @@
 
 Create a node.js debian package for Rasbian. Unfortunately, debian only has old packages in their repository.
 
+## Issues
+
+- this file is missing: `/usr/local/lib/node_modules/npm/node_modules/glob/node_modules/fs.realpath/old.js`. Once replaced, it all works.
+
 ## To Update
 
 * Download the current version of [node](https://nodejs.org/en/download/current/) (either ARMv6 or ARMv7)
@@ -15,6 +19,7 @@ Create a node.js debian package for Rasbian. Unfortunately, debian only has old 
     * `dpkg-deb --build node-pkg` (or whatever the current node version is)
     * copies the package to `../debian_packages` for safe keeping
 * To install do: `sudo dpkg -i node-pkg.deb`
+* Then do: `npm upgrade -g npm`
 
 ## Versions
 
