@@ -1,7 +1,0 @@
-Package: node
-Architecture: armhf
-Maintainer: Kevin
-Depends: debconf (>= 0.5.00)
-Priority: optional
-Version: 7.10.0
-Description: node.js kevin
