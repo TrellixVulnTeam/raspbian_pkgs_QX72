@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+
+echo "Using ldconfig"
+ldconfig
+
+echo "update npm"
+npm install -g npm http https archeyjs
+
+echo "fixing permission so they are back to pi"
+chown -R pi:pi /usr/local
+
+echo "Done"
