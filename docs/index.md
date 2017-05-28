@@ -1,5 +1,5 @@
 ---
-layout: !default
+layout: default
 ---
 
 # Packages
@@ -14,7 +14,9 @@ packages for Rasbian Arm v6/v7.
 
 
 
-
+<footer class="site-footer">
+<p>Hello</p>
+</footer>
 
 
 
