@@ -1,0 +1,7 @@
+Package: node-armv6
+Architecture: armhf
+Maintainer: Kevin
+Depends: debconf (>= 0.5.00)
+Priority: optional
+Version: 8.0.0
+Description: node.js kevin
