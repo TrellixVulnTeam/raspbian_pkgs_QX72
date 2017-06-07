@@ -2,24 +2,32 @@
 
 Create a node.js debian package for Rasbian. Unfortunately, debian only has old packages in their repository.
 
+[Nodejs.org](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions) 
+maintains packages for ARMv7 and higher. Unfortunately, Zero Pi's are ARMv6. So for ARMv7, you can do:
+
+ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+ sudo apt-get install -y nodejs
+
+For ARMv6, use the packages here built using their source.
+
 ## Issues
 
 - this file is missing: `/usr/local/lib/node_modules/npm/node_modules/glob/node_modules/fs.realpath/old.js`. Once replaced, it all works.
 
 ## To Update
 
-* Download the current version of [node](https://nodejs.org/en/download/current/) (either ARMv6 or ARMv7)
-* Unpack it in the git repository so now you have something like `node-v7.0.0-linux-armv6l` in `node_debian_pkg`
+* Download the current version of [node](https://nodejs.org/en/download/current/) (ARMv6 version)
+* Unpack it in the git repository so now you have something like `node-v7.0.0-linux-armv6l` in `node`
 * Copy the Debian folder (in the old version) over to the new version
-  * Update `DEBIAN/control` to the new version
+  * Update `DEBIAN/control` to the new version number
 * Move all of the package folder (e.g., `bin`, `lib`, etc) under a new directory you make `usr/local`
-* Then cd back up to the `node_debian_pkg` directory
+* Then cd back up to the `node` directory
 * Issue the command `build-pkg.sh` which will:
     * fix permissions on control files in `node-pkg/DEBIAN`
     * `dpkg-deb --build node-pkg` (or whatever the current node version is)
     * copies the package to `../debian_packages` for safe keeping
-* To install do: `sudo dpkg -i node-pkg.deb`
-* Then do: `npm upgrade -g npm`
+* To install do: `sudo dpkg -i node-pkg-name.deb`
+* Then do: `npm install npm@latest -g`
 
 ## Versions
 
