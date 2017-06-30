@@ -46,7 +46,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]] || [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
 	apt-get -y install ffmpeg
 	apt-get -y install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
 	apt-get -y install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
-	apt-get -y install libxvidcore-dev libx264-dev
+	apt-get -y --force-yes install libxvidcore-dev libx264-dev
 	apt-get -y install libatlas-base-dev gfortran
 	apt-get -y install python2.7-dev python3-dev
 	apt-get -y install libgtk2.0-dev
