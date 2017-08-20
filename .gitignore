@@ -4,9 +4,9 @@ build/
 old.*
 old/
 *.pycy
-# opencv3/opencv-3.*
-# python3/Python-3.*
-# zeromq/zeromq-4.*
-# node/node-v7.*
+opencv3/opencv-3.*
+python3/Python-3.*
+zeromq/zeromq-4.*
+node/node-v7.*
 __pycache__
 

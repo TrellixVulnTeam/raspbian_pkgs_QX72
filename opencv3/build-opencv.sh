@@ -12,7 +12,7 @@ echo "start ---------------"
 #
 
 USR=pi
-OPENCV_VERSION=3.2.0
+OPENCV_VERSION=3.3.0
 CURRDIR=$(pwd)
 OPENCV_INSTALL_DIR="$CURRDIR/libopencv3-kevin/usr/local"
 
