@@ -43,10 +43,10 @@ echo "Updating things python libs"
 echo "----------------------------"
 
 pip install -U pip setuptools wheel
-pip install -U numpy PyYAML matplotlib simplejson
+# pip install -U numpy PyYAML matplotlib simplejson
 
 pip3 install -U pip setuptools wheel
-pip3 install -U numpy PyYAML matplotlib simplejson
+# pip3 install -U numpy PyYAML matplotlib simplejson
 
 # fix permissions from above operations
 chown -R pi:pi /usr/local
