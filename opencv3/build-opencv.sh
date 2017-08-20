@@ -63,6 +63,8 @@ if [[ "$OSTYPE" == "linux-gnu" ]] || [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
 	fi
 fi
 
+apt-get autoremove -y
+
 if [ ! -f $OPENCV_VERSION.tar.gz ]; then
 	wget https://github.com/opencv/opencv/archive/$OPENCV_VERSION.tar.gz
 else
