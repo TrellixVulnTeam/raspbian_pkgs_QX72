@@ -22,6 +22,35 @@ echo "Installing to: $OPENCV_INSTALL_DIR"
 echo "-------------------------------------------------"
 echo ""
 
+
+if [[ "$OSTYPE" == "linux-gnu" ]] || [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
+  # apt-get update
+  apt-get -y upgrade
+  apt-get -y install build-essential cmake git pkg-config python-dev swig
+  apt-get -y install libeigen3-dev
+  apt-get -y install ffmpeg
+  apt-get -y install libjpeg-dev libtiff5-dev libjasper-dev libpng16-dev
+  apt-get -y install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+  apt-get -y --force-yes install libxvidcore-dev libx264-dev
+  apt-get -y install libatlas-base-dev gfortran
+  apt-get -y install python2.7-dev python3-dev
+  apt-get -y install libgtk2.0-dev
+  apt-get autoremove -y
+fi
+
+echo "----------------------------"
+echo "Updating things python libs"
+echo "----------------------------"
+
+pip install -U pip setuptools wheel
+pip install -U numpy PyYAML matplotlib simplejson
+
+pip3 install -U pip setuptools wheel
+pip3 install -U numpy PyYAML matplotlib simplejson
+
+# fix permissions from above operations
+chown -R pi:pi /usr/local
+
 # python 2
 PY2LIB=$(python -c "from distutils.sysconfig import get_config_var;from os.path import dirname,join ; print(join(dirname(get_config_var('LIBPC')),get_config_var('LDLIBRARY')))")
 PY2INCLUDE=$(python -c "from distutils.sysconfig import get_python_inc; print(get_python_inc())")
@@ -38,38 +67,17 @@ PY3NUMPY=$(python3 -c "import numpy; print(numpy.get_include())")
 #PY3PKGS=$(python3 -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")
 PY3PKGS=$OPENCV_INSTALL_DIR/lib/python3/dist-packages
 
-if [[ "$OSTYPE" == "linux-gnu" ]] || [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
-	# apt-get update
-	apt-get -y upgrade
-	apt-get -y install build-essential cmake git pkg-config python-dev swig
-	apt-get -y install libeigen3-dev
-	apt-get -y install ffmpeg
-	apt-get -y install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
-	apt-get -y install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
-	apt-get -y --force-yes install libxvidcore-dev libx264-dev
-	apt-get -y install libatlas-base-dev gfortran
-	apt-get -y install python2.7-dev python3-dev
-	apt-get -y install libgtk2.0-dev
-
-	# update python2
-	#su $USR -c "pip install -U pip setuptools wheel"
-	#su $USR -c "pip install -U numpy PyYAML matplotlib simplejson"
-
-	# update python3
-	if type python3 &> /dev/null; then
-		echo "found python3"
-		#su $USR -c "pip3 install -U pip setuptools wheel"
-		#su $USR -c "pip3 install -U numpy PyYAML matplotlib simplejson"
-	fi
+if [ ! -f $OPENCV_VERSION.tar.gz ]; then
+  wget https://github.com/opencv/opencv/archive/$OPENCV_VERSION.tar.gz
+else
+  echo "Using previously downloaded file"
 fi
 
-apt-get autoremove -y
-
-if [ ! -f $OPENCV_VERSION.tar.gz ]; then
-	wget https://github.com/opencv/opencv/archive/$OPENCV_VERSION.tar.gz
-else
-	echo "Using previously downloaded file"
-	# rm -fr opencv-$OPENCV_VERSION
+# clean out the old
+if [ -d opencv-$OPENCV_VERSION ]; then
+  echo "*** Deleting opencv-${OPENCV_VERSION} ***"
+  sleep 5
+  rm -fr opencv-$OPENCV_VERSION
 fi
 
 # setup things
@@ -96,6 +104,3 @@ cmake -DCMAKE_BUILD_TYPE=RELEASE \
 # make and install
 make -j4
 make install
-
-# clean up
-# rm -fr opencv-$OPENCV_VERSION
