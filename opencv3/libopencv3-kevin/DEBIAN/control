@@ -1,7 +1,7 @@
 Package: opencv
 Architecture: all
 Maintainer: Kevin
-Depends: debconf (>= 0.5.00), zlib1g-dev, libc6 (>= 2.4), libstdc++6 (>= 4.9), zlib1g (>= 1:1.1.4), libeigen3-dev, libxvidcore-dev, libx264-dev, libgtk2.0-dev, libjpeg-dev, libtiff5-dev, libjasper-dev, libpng12-dev, ffmpeg, libavcodec-dev, libavformat-dev, libswscale-dev, libv4l-dev
+Depends: debconf (>= 0.5.00), zlib1g-dev, libc6 (>= 2.4), libstdc++6 (>= 4.9), zlib1g (>= 1:1.1.4), libeigen3-dev, libxvidcore-dev, libx264-dev, libgtk2.0-dev, libjpeg-dev, libtiff5-dev, libjasper-dev, libpng-dev, ffmpeg, libavcodec-dev, libavformat-dev, libswscale-dev, libv4l-dev
 Priority: optional
 Version: 3.3.0
 Description: Kevin's computer vision library
