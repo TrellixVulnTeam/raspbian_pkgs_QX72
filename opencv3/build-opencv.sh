@@ -24,17 +24,8 @@ echo ""
 
 
 if [[ "$OSTYPE" == "linux-gnu" ]] || [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
-  # apt-get update
-  apt-get -y upgrade
-  apt-get -y install build-essential cmake git pkg-config python-dev swig
-  apt-get -y install libeigen3-dev
-  apt-get -y install ffmpeg
-  apt-get -y install libjpeg-dev libtiff5-dev libjasper-dev libpng-dev libpng-tools
-  apt-get -y install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
-  apt-get -y --force-yes install libxvidcore-dev libx264-dev
-  apt-get -y install libatlas-base-dev gfortran
-  apt-get -y install python2.7-dev python3-dev
-  apt-get -y install libgtk2.0-dev
+  # update system
+  ./update-opencv.sh
   apt-get autoremove -y
 fi
 
@@ -43,10 +34,10 @@ echo "Updating things python libs"
 echo "----------------------------"
 
 pip install -U pip setuptools wheel
-# pip install -U numpy PyYAML matplotlib simplejson
+pip install -U numpy PyYAML matplotlib simplejson
 
 pip3 install -U pip setuptools wheel
-# pip3 install -U numpy PyYAML matplotlib simplejson
+pip3 install -U numpy PyYAML matplotlib simplejson
 
 # fix permissions from above operations
 chown -R pi:pi /usr/local
