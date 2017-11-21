@@ -1,6 +1,19 @@
 # OpenCV 3.x
 
-## Build
+## Install
+
+	./update-opencv.sh
+	dpkg -i libopencv-kevin.deb
+
+## Build the Package
+  
+You should be able to use the package already built in this
+repo, but if you want/need to build it:
+
+	./build-opencv.sh
+	./build-pkg.sh
+
+### Jessie, Missing ffmpeg
 
 Debian gods have removed ffmpeg from Jessie, so to fix it (only do this once):
 
@@ -14,16 +27,8 @@ add the repo to our system, update the local repo index and install the
 	$ sudo apt-get update
 	$ sudo apt-get install deb-multimedia-keyring
 	$ sudo apt-get install ffmpeg
-  
-Now you system is good. Next:
 
-	./build-opencv.sh
-	./build-pkg.sh
-
-## Install
-
-	dpkg -i libopencv-kevin.deb
-
+Now you system is good. Now go back and install/build.
 
 ---
 
