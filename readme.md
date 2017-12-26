@@ -1,3 +1,5 @@
+**WARNING:** This repo is depreciated. I am breaking this up into individual repos. I often only need one of these and keeping them all together forces me to carry a lot of baggage around I am not updating or keeping track of.
+
 # Rasbian Packages
 
 Unfortunately raspbian has old packages and the linux distro model is to move
